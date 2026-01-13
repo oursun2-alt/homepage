@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-lg border-0 bg-white">
+            <div class="card-body p-5">
+                <h3 class="card-title text-center mb-4 display-6 fw-bold" style="color: #4a2c00;">새 친구 환영해! 🤝</h3>
+                <p class="text-center text-muted mb-4">우리 반 친구가 된 걸 축하해! 아래를 채워줘!</p>
+                <form method="POST">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">내 멋진 이름 (아이디)</label>
+                        <input type="text" name="username" class="form-control form-control-lg rounded-pill bg-light border-0 px-4" placeholder="예: 홍길동" required="">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">비밀번호 정하기</label>
+                        <input type="password" name="password" class="form-control form-control-lg rounded-pill bg-light border-0 px-4" placeholder="기억하기 쉬운 걸로!" required="">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-lg btn-custom w-100 py-3 mt-2">친구로 등록하기! 🎈</button>
+                </form>
+                <div class="text-center mt-4">
+                    <a href="/login" class="text-decoration-none text-secondary">이미 가입했니? 여기서 로그인해!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
