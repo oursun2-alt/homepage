@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row align-items-center mb-5">
+    <div class="col-md-7">
+        <div class="p-5 mb-4 bg-white rounded-5 shadow-lg border-bottom border-primary border-5">
+            <h1 class="display-3 fw-bold mb-4" style="color: #4a2c00; line-height: 1.2;">안녕 친구들! 👋<br><span style="color: var(--secondary-color);">여긴 우리 반</span> 공간이야!</h1>
+            <p class="fs-4 mb-5" style="color: #666; font-family: 'Gaegu', sans-serif;">
+                즐거운 6학년 생활을 위한 비밀 공간입니다.<br>
+                선생님이 남기신 알림장을 확인하고,<br>
+                친구들과 자유게시판에서 이야기도 나누어 보아요! 📖💬
+            </p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-md-start">
+                {% if not session.get('user_id') %}
+                <a class="btn btn-primary btn-lg btn-custom px-5 py-3 fs-3" href="/register">모두 함께 가입하기! 🚀</a>
+                {% else %}
+                <div class="d-flex gap-2">
+                    <a class="btn btn-success btn-lg btn-custom px-4 py-2" href="/letters">알림장 확인 📢</a>
+                    <a class="btn btn-primary btn-lg btn-custom px-4 py-2" href="/board">친구들과 대화 💬</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5 text-center">
+        <div class="position-relative">
+            <img src="{{ url_for('static', filename='classroom_banner.png') }}" alt="우리반 교실" class="img-fluid rounded-5 shadow-lg border border-white border-5 rotate-subtle">
+            <div class="position-absolute top-100 start-50 translate-middle mt-3 bg-white px-4 py-2 rounded-pill shadow-sm w-100" style="max-width: 250px;">
+                <span class="fs-4 fw-bold text-secondary">오늘도 즐겁게! ✨</span>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .rotate-subtle {
+        transition: transform 0.5s;
+        transform: rotate(-2deg);
+    }
+    .rotate-subtle:hover {
+        transform: rotate(0deg) scale(1.02);
+    }
+</style>
+{% endblock %}
