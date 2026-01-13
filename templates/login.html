@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-lg border-0 bg-white">
+            <div class="card-body p-5">
+                <h3 class="card-title text-center mb-4 display-6 fw-bold" style="color: #4a2c00;">학교 올 시간이야! 🎒</h3>
+                <p class="text-center text-muted mb-4">반가워 친구야! 이름을 적고 입장해줘!</p>
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <div class="alert alert-danger border-0 rounded-pill text-center">{{ messages[0] }} 🧐</div>
+                {% endif %}
+                {% endwith %}
+                <form method="POST">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">내 이름 (아이디)</label>
+                        <input type="text" name="username" class="form-control form-control-lg rounded-pill bg-light border-0 px-4" placeholder="예: 홍길동" required="">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">비밀번호</label>
+                        <input type="password" name="password" class="form-control form-control-lg rounded-pill bg-light border-0 px-4" placeholder="비밀번호를 적어줘!" required="">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-custom w-100 py-3 mt-2">신나게 입장하기! ✨</button>
+                </form>
+                <div class="text-center mt-4">
+                    <a href="/register" class="text-decoration-none text-secondary">아직 회원이 아니니? 여기서 가입해!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
