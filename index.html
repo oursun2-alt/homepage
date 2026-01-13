@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏫 6학년 우리 반 - 즐거운 우리들의 공간</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="즐거운 6학년 생활을 위한 우리 반 비밀 공간! 알림장 확인과 자유게시판 소통이 가능합니다.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gamja+Flower&family=Jua&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FFD93D;
+            --secondary-color: #FF8400;
+            --accent-color: #6EB1FF;
+            --bg-color: #FFF9E3;
+            --card-radius: 30px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Jua', sans-serif;
+            background-image: radial-gradient(var(--primary-color) 0.5px, transparent 0.5px);
+            background-size: 30px 30px;
+            color: #4a2c00;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background-color: var(--primary-color) !important;
+            border-bottom: 6px solid var(--secondary-color);
+            padding: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 2rem;
+            color: #4a2c00 !important;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-section {
+            padding: 100px 0;
+            min-height: calc(100vh - 100px);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-card {
+            background: white;
+            border-radius: var(--card-radius);
+            padding: 3.5rem;
+            border-bottom: 8px solid var(--primary-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 1;
+        }
+
+        .display-3 {
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .text-secondary-custom {
+            color: var(--secondary-color);
+        }
+
+        .btn-custom {
+            border-radius: 50px;
+            padding: 15px 35px;
+            font-weight: bold;
+            font-size: 1.25rem;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1);
+            filter: brightness(1.05);
+        }
+
+        .btn-main {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-sub {
+            background-color: var(--accent-color);
+            color: white;
+            margin-left: 1rem;
+        }
+
+        .img-container {
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .classroom-img {
+            width: 100%;
+            border-radius: var(--card-radius);
+            border: 8px solid white;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transform: rotate(-2deg);
+            transition: transform 0.5s ease;
+        }
+
+        .img-container:hover .classroom-img {
+            transform: rotate(0deg) scale(1.03);
+        }
+
+        .floating-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -10px;
+            background: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .footer-notice {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 50px 0;
+            }
+            .btn-sub {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+            .hero-card {
+                padding: 2rem;
+            }
+            .display-3 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">🏫 6학년 우리 반</a>
+            <div class="ms-auto">
+                <span class="d-none d-md-inline me-3 fw-bold">오늘도 행복한 하루! ✨</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container hero-section">
+        <div class="row align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0">
+                <div class="hero-card">
+                    <h1 class="display-3 fw-bold">
+                        안녕 친구들! 👋<br>
+                        <span class="text-secondary-custom">여긴 우리 반</span> 공간이야!
+                    </h1>
+                    <p class="fs-4 mb-5 text-muted" style="font-family: 'Gaegu', sans-serif;">
+                        즐거운 6학년 생활을 위한 우리들만의 소중한 공간입니다.<br>
+                        선생님의 알림장을 확인하고,<br>
+                        친구들과 자유게시판에서 이야기도 나누어 보아요! 📖💬
+                    </p>
+                    <div class="cta-btns">
+                        <a href="templates/login.html" class="btn-custom btn-main">우리 반 입장하기! 🚀</a>
+                        <a href="templates/board.html" class="btn-custom btn-sub">게시판 구경하기 💬</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="img-container">
+                    <img src="static/classroom_banner.png" alt="우리반 교실" class="classroom-img">
+                    <div class="floating-badge">
+                        오늘도 즐겁게! ✨
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-notice">
+        <p>본 페이지는 정적 미리보기 페이지입니다. 실제 기능을 사용하시려면 Python Flask 서버를 실행해주세요. 🚀</p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
