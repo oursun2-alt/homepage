@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="mb-5 text-center">
+    <h2 class="display-4 fw-bold" style="color: #4a2c00;">📢 우리 반 알림장</h2>
+    <p class="fs-5 text-muted">선생님이 남기신 소중한 소식들을 확인해요!</p>
+</div>
+<div class="row">
+    {% for post in posts %}
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 shadow-sm border-0 rounded-5" style="border-top: 8px solid var(--accent-color) !important;">
+            <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="card-title fw-bold mb-0" style="color: #2c3e50;">📍 {{ post[1] }}</h4>
+                    <span class="badge rounded-pill bg-light text-dark border p-2 px-3">{{ post[3] }}</span>
+                </div>
+                <div class="p-3 bg-light rounded-4" style="border-left: 5px solid #FFD93D;">
+                    <p class="card-text fs-5 mb-0" style="color: #444; line-height: 1.6;">{{ post[2] }}</p>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-0 text-end pb-4 px-4">
+                <span class="text-secondary fw-bold">확인 완료! ✅</span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
